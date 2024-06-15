@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vücut Kitle İndeksi Hesaplama</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+      <div class="container">      
+        <h2>Vücut Kitle İndeksi Hesaplama</h2>
+      <div class="container-cover">
+        <p>Kilonuzu Giriniz :</p>
+        <div class="InputContainer">
+          <input
+            placeholder="Kilonuz"
+            id="inputWeight"
+            class="input"
+            name="text"
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="container-cover">
+        <p>Boyunuzu Giriniz (cm) :</p>
+        <div class="InputContainer">
+          <input
+            placeholder="Boyunuz"
+            id="inputHeight"
+            class="input"
+            name="text"
+            type="text"
+          />
+        </div>
+      </div>
+      <button class="btn" role="button">
+        <span class="text">Hesapla</span>
+      </button>
+    </div>
+    <div class="result-container" id="resultContainer">
+      <div class="container-cover">
+        <p>Vücut Kitle İndeksiniz (BMI):</p>
+        <p id="BMI"></p>
+        <p id="result"></p>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

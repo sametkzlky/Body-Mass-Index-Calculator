@@ -1,16 +1,19 @@
 const inputWeight = document.getElementById('inputWeight');
 const inputHeight = document.getElementById('inputHeight');
-const calculateBtn = document.querySelector('.btn');
+const calculateButton = document.querySelector('.btn');
 const resultContainer = document.getElementById('resultContainer');
-const bmiResult = document.getElementById('BMI');
+const BodyMassIndex = document.getElementById('BMI');
 const result = document.getElementById('result');
 
-calculateBtn.addEventListener('click', function() {
+function calculateBMI() {
     result.textContent = '';
+
     const weight = parseFloat(inputWeight.value); 
     const height = parseFloat(inputHeight.value) / 100; 
     const bmi = weight / (height * height);
+
     resultContainer.style.display = "block";
+
     if (bmi < 18.5) {
         result.textContent += 'Zayıf';
     } else if (bmi >= 18.5 && bmi < 25) {
@@ -20,5 +23,16 @@ calculateBtn.addEventListener('click', function() {
     } else if(bmi > 30) {
         result.textContent += 'Obezite';
     }  
-    bmiResult.textContent = bmi.toFixed(2);
+    
+    BodyMassIndex.textContent = bmi.toFixed(2);
+}
+
+calculateButton.addEventListener('click', calculateBMI);
+
+[inputWeight, inputHeight].forEach(input => {
+    input.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            calculateBMI();
+        }
+    });
 });
